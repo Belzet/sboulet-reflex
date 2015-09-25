@@ -1,9 +1,12 @@
 package sboulet.assignment1;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -11,6 +14,33 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        Button single = (Button) findViewById(R.id.single);
+        single.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, SingleplayerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button gameshow = (Button) findViewById(R.id.gameshow);
+        gameshow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, GameshowActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button stats = (Button) findViewById(R.id.stats);
+        stats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, StatisticsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

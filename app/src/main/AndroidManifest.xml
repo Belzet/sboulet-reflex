@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SingleplayerActivity"
+            android:label="@string/title_activity_singleplayer" >
+        </activity>
+        <activity
+            android:name=".GameshowActivity"
+            android:label="@string/title_activity_gameshow" >
+        </activity>
+        <activity
+            android:name=".StatisticsActivity"
+            android:label="@string/title_activity_statistics" >
+        </activity>
     </application>
 
 </manifest>
