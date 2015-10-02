@@ -10,7 +10,6 @@ public class ReactionTime {
     private long startTime;
     private long endTime;
     private long reactionTime;
-    private int random_time;
 
     public ReactionTime() {
         startTime = System.currentTimeMillis();
@@ -18,7 +17,7 @@ public class ReactionTime {
     }
 
     public int getRandomTime() {
-        random_time = (10 + (int)(Math.random() * ((2000 - 10) + 1)));
+        int random_time = (10 + (int)(Math.random() * ((2000 - 10) + 1)));
         startTime = System.currentTimeMillis();
         return random_time;
     }

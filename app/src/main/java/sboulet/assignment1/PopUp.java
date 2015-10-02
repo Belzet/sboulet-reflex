@@ -17,13 +17,11 @@ import android.content.Intent;
  *************************************************************************/
 
 public class PopUp {
-    public AlertDialog.Builder builder1;
-    public AlertDialog alert11;
-    public Context context;
+    private AlertDialog.Builder builder1;
+    private AlertDialog alert11;
 
     public PopUp(String message, String positive, final Context context) {
-        this.context = context;
-        builder1 = new AlertDialog.Builder(this.context);
+        builder1 = new AlertDialog.Builder(context);
         builder1.setMessage(message);
         builder1.setCancelable(true);
         builder1.setPositiveButton(positive,
@@ -39,8 +37,7 @@ public class PopUp {
     }
 
     public PopUp(long reaction, String positive, final Context context) {
-        this.context = context;
-        builder1 = new AlertDialog.Builder(this.context);
+        builder1 = new AlertDialog.Builder(context);
         builder1.setMessage(String.valueOf(reaction));
         builder1.setCancelable(true);
         builder1.setPositiveButton(positive,
