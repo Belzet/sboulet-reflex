@@ -28,6 +28,18 @@
             android:name=".PlayerSelectActivity"
             android:label="@string/title_activity_player_select" >
         </activity>
+        <activity
+            android:name=".TwoPlayerActivity"
+            android:label="@string/title_activity_two_player" >
+        </activity>
+        <activity
+            android:name=".ThreePlayerActivity"
+            android:label="@string/title_activity_three_player" >
+        </activity>
+        <activity
+            android:name=".FourPlayerActivity"
+            android:label="@string/title_activity_four_player" >
+        </activity>
     </application>
 
 </manifest>

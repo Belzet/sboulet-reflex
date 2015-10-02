@@ -55,7 +55,7 @@ public class SingleplayerActivity extends AppCompatActivity {
         super.onResume();
 
         //create buzzer
-        final ToggleButton toggle = (ToggleButton) findViewById(R.id.greybuzzer);
+        ToggleButton toggle = (ToggleButton) findViewById(R.id.greybuzzer);
         BuzzerButton buzzer = new BuzzerButton(toggle, SingleplayerActivity.this);
 
         //refresh to default state
