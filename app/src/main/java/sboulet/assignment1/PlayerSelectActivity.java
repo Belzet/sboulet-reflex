@@ -1,9 +1,12 @@
 package sboulet.assignment1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class PlayerSelectActivity extends AppCompatActivity {
 
@@ -11,6 +14,36 @@ public class PlayerSelectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_select);
+
+        //moves to TwoPlayerActivity when pressed
+        Button two = (Button) findViewById(R.id.two);
+        two.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PlayerSelectActivity.this, TwoPlayerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //moves to GameshowActivity when pressed
+        Button three = (Button) findViewById(R.id.three);
+        three.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PlayerSelectActivity.this, ThreePlayerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //moves to StatisticsActivity when pressed
+        Button four = (Button) findViewById(R.id.four);
+        four.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PlayerSelectActivity.this, FourPlayerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
