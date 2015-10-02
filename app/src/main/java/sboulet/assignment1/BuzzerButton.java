@@ -81,6 +81,7 @@ public class BuzzerButton {
             @Override
             public void run() {
                 button.setRed(context);
+                react.setStartTime();
                 button.clickOnTime(context);
             }
         };

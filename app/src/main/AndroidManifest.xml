@@ -21,17 +21,12 @@
             android:label="@string/title_activity_singleplayer" >
         </activity>
         <activity
-            android:name=".GameshowActivity"
-            android:label="@string/title_activity_gameshow" >
-        </activity>
-        <activity
             android:name=".StatisticsActivity"
             android:label="@string/title_activity_statistics" >
         </activity>
         <activity
-            android:name=".SingleplayerOpeningActivity"
-            android:theme="@android:style/Theme.Holo.Dialog"
-            android:label="@string/title_activity_singleplayer_opening" >
+            android:name=".PlayerSelectActivity"
+            android:label="@string/title_activity_player_select" >
         </activity>
     </application>
 

@@ -18,8 +18,11 @@ public class ReactionTime {
 
     public int getRandomTime() {
         int random_time = (10 + (int)(Math.random() * ((2000 - 10) + 1)));
-        startTime = System.currentTimeMillis();
         return random_time;
+    }
+
+    public void setStartTime() {
+        startTime = System.currentTimeMillis();
     }
 
     public void setReactionTime(long reactionTime) {
