@@ -15,6 +15,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        //moves to SingleplayerActivity when pressed
         Button single = (Button) findViewById(R.id.single);
         single.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,6 +25,7 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        //moves to GameshowActivity when pressed
         Button gameshow = (Button) findViewById(R.id.gameshow);
         gameshow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +35,7 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
+        //moves to StatisticsActivity when pressed
         Button stats = (Button) findViewById(R.id.stats);
         stats.setOnClickListener(new View.OnClickListener() {
             @Override

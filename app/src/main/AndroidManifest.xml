@@ -28,6 +28,11 @@
             android:name=".StatisticsActivity"
             android:label="@string/title_activity_statistics" >
         </activity>
+        <activity
+            android:name=".SingleplayerOpeningActivity"
+            android:theme="@android:style/Theme.Holo.Dialog"
+            android:label="@string/title_activity_singleplayer_opening" >
+        </activity>
     </application>
 
 </manifest>
