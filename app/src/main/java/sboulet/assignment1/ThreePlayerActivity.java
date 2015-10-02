@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class ThreePlayerActivity extends AppCompatActivity {
 
@@ -11,6 +13,36 @@ public class ThreePlayerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_player);
+
+        //constructing Player 1 buzzer
+        Button firstplayer = (Button) findViewById(R.id.player1buzzer);
+        final PlayerButton player1 = new PlayerButton(firstplayer, "Player 1", "3player", ThreePlayerActivity.this);
+        firstplayer.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                player1.onClick();
+            }
+        });
+
+        //constructing Player 2 buzzer
+        Button secondplayer = (Button) findViewById(R.id.player2buzzer);
+        final PlayerButton player2 = new PlayerButton(secondplayer, "Player 2", "3player", ThreePlayerActivity.this);
+        secondplayer.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                player2.onClick();
+            }
+        });
+
+        //constructing Player 3 buzzer
+        Button thirdplayer = (Button) findViewById(R.id.player3buzzer);
+        final PlayerButton player3 = new PlayerButton(secondplayer, "Player 3", "3player", ThreePlayerActivity.this);
+        thirdplayer.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                player3.onClick();
+            }
+        });
     }
 
     @Override
@@ -34,4 +66,5 @@ public class ThreePlayerActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

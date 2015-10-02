@@ -11,21 +11,20 @@ public class PlayerButton {
     private Button button;
     private String player;
     private BuzzerCountList countList;
+    private String mode;
+    private Context context;
 
-    public PlayerButton(Button button, String player, Context context) {
+    public PlayerButton(Button button, String player, String mode, Context context) {
         this.button = button;
         this.player = player;
-        countList = new BuzzerCountList(context);
+        this.context = context;
+        this.mode = mode;
+        countList = new BuzzerCountList(context, mode);
     }
 
-    public void onClick(final Context context) {
-        button.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                PopUp clicked = new PopUp((player + "clicked first"), "OK", context);
-                clicked.show();
-                countList.add(player);
-            }
-        });
+    public void onClick() {
+        PopUp clicked = new PopUp((player + " clicked first"), context);
+        clicked.show();
+        countList.add(player);
     }
 }

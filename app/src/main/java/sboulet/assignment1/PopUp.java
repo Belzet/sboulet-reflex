@@ -19,11 +19,13 @@ import android.content.Intent;
 public class PopUp {
     private AlertDialog.Builder builder1;
     private AlertDialog alert11;
+    private Context context;
 
     public PopUp(String message, String positive, final Context context) {
+        this.context = context;
         builder1 = new AlertDialog.Builder(context);
         builder1.setMessage(message);
-        builder1.setCancelable(true);
+        builder1.setCancelable(false);
         builder1.setPositiveButton(positive,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -37,9 +39,10 @@ public class PopUp {
     }
 
     public PopUp(long reaction, String positive, final Context context) {
+        this.context = context;
         builder1 = new AlertDialog.Builder(context);
         builder1.setMessage(String.valueOf(reaction));
-        builder1.setCancelable(true);
+        builder1.setCancelable(false);
         builder1.setPositiveButton(positive,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -49,6 +52,13 @@ public class PopUp {
                         context.startActivity(intent);
                     }
                 });
+    }
+
+    public PopUp(String message, final Context context) {
+        this.context = context;
+        builder1 = new AlertDialog.Builder(context);
+        builder1.setMessage(message);
+        builder1.setCancelable(true);
     }
 
     public void show() {

@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class TwoPlayerActivity extends AppCompatActivity {
 
@@ -11,6 +13,26 @@ public class TwoPlayerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_player);
+
+        //constructing Player 1 buzzer
+        Button firstplayer = (Button) findViewById(R.id.player1buzzer);
+        final PlayerButton player1 = new PlayerButton(firstplayer, "Player 1", "2player", TwoPlayerActivity.this);
+        firstplayer.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                player1.onClick();
+            }
+        });
+
+        //constructing Player 2 buzzer
+        Button secondplayer = (Button) findViewById(R.id.player2buzzer);
+        final PlayerButton player2 = new PlayerButton(secondplayer, "Player 2", "2player", TwoPlayerActivity.this);
+        secondplayer.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                player2.onClick();
+            }
+        });
     }
 
     @Override

@@ -19,11 +19,12 @@ import java.util.ArrayList;
  * Created by Suzanne on 9/30/2015.
  */
 public class BuzzerCountList {
-    private static final String FILENAME = "player.sav";
+    private String FILENAME;
     private Context context;
     private ArrayList<String> buzzerCounts;
 
-    public BuzzerCountList(Context context) {
+    public BuzzerCountList(Context context, String mode) {
+        FILENAME = mode;
         this.context = context;
         buzzerCounts = new ArrayList<String>();
         try {
