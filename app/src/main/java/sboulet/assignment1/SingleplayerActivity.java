@@ -56,7 +56,7 @@ public class SingleplayerActivity extends AppCompatActivity {
 
         //create buzzer
         final ToggleButton toggle = (ToggleButton) findViewById(R.id.greybuzzer);
-        BuzzerButton buzzer = new BuzzerButton(toggle);
+        BuzzerButton buzzer = new BuzzerButton(toggle, SingleplayerActivity.this);
 
         //refresh to default state
         buzzer.setGrey(SingleplayerActivity.this);

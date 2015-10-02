@@ -21,19 +21,32 @@ import java.util.ArrayList;
 public class ReactionTimeList {
     private ArrayList<Long> reactionTimes;
     private static final String FILENAME = "reaction.sav";
+    private Context context;
 
-    public ReactionTimeList() {
-        reactionTimes = new ArrayList<>();
+    public ReactionTimeList(Context context) {
+        this.context = context;
+        try {
+            FileInputStream fis = context.openFileInput(FILENAME);
+            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+            Gson gson = new Gson();
+            // Taken from https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html 2015-10-2
+            Type listType = new TypeToken<ArrayList<Long>>() {}.getType();
+            reactionTimes = gson.fromJson(in, listType);
+        } catch (FileNotFoundException e) {
+            reactionTimes = new ArrayList<Long>();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
-    public void addTime(Long time, Context context) {
+    public void addTime(Long time) {
         reactionTimes.add(time);
         try {
             FileOutputStream fos = context.openFileOutput(FILENAME, 0);
             OutputStreamWriter writer = new OutputStreamWriter(fos);
             Gson gson = new Gson();
-            gson.toJson(time, writer);
+            gson.toJson(reactionTimes, writer);
             writer.flush();
             fos.close();
         } catch (FileNotFoundException e) {
@@ -43,7 +56,7 @@ public class ReactionTimeList {
         }
     }
 
-    public void loadTimes(Context context) {
+    public void loadTimes() {
         try {
             FileInputStream fis = context.openFileInput(FILENAME);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));

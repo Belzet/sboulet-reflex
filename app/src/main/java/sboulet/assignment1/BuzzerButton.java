@@ -17,13 +17,13 @@ public class BuzzerButton {
     private ReactionTimeList reactList;
     private ReactionTime react;
 
-    public BuzzerButton(ToggleButton toggle) {
+    public BuzzerButton(ToggleButton toggle, Context context) {
         buzzer = toggle;
         buzzer.setText(null);
         buzzer.setTextOff(null);
         buzzer.setTextOn(null);
         react = new ReactionTime();
-        reactList = new ReactionTimeList();
+        reactList = new ReactionTimeList(context);
     }
 
     //set to default state
@@ -52,7 +52,7 @@ public class BuzzerButton {
 
             public void onClick(View v) {
                 react.setReactionTime(System.currentTimeMillis());
-                reactList.addTime(react.getReactionTime(), context);
+                reactList.addTime(react.getReactionTime());
                 PopUp success = new PopUp(react.getReactionTime(), "OK", context);
                 success.show();
             }
