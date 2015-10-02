@@ -52,7 +52,7 @@ public class BuzzerButton {
 
             public void onClick(View v) {
                 react.setReactionTime(System.currentTimeMillis());
-                reactList.addTime(react.getReactionTime());
+                reactList.addTime(react.getReactionTime(), context);
                 PopUp success = new PopUp(react.getReactionTime(), "OK", context);
                 success.show();
             }
