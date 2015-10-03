@@ -76,6 +76,14 @@
             android:name=".FourPlayerPressActivity"
             android:label="@string/title_activity_four_player_press" >
         </activity>
+        <activity
+            android:name=".ClearActivity"
+            android:label="@string/title_activity_clear" >
+        </activity>
+        <activity
+            android:name=".EmailActivity"
+            android:label="@string/title_activity_email" >
+        </activity>
     </application>
 
 </manifest>

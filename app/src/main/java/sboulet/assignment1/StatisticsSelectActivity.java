@@ -34,6 +34,26 @@ public class StatisticsSelectActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //moves to ClearActivity when pressed
+        Button clear = (Button) findViewById(R.id.clear);
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StatisticsSelectActivity.this, ClearActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //moves to EmailActivity when pressed
+        Button email = (Button) findViewById(R.id.email);
+        email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StatisticsSelectActivity.this, EmailActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

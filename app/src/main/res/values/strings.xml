@@ -12,6 +12,9 @@
 
     <string name="title_activity_statistics_select">Statistics</string>
 
+    <string name="title_activity_clear">Warning!</string>
+    <string name="title_activity_email">Email Statistics</string>
+
     <string name="title_activity_reaction_time_select">Choose Stats to View</string>
     <string name="title_activity_minimum_reaction">Minimum of Reaction Times</string>
     <string name="title_activity_maximum_reaction">Maximum of Reaction Times</string>
@@ -66,4 +69,7 @@
     <string name="p2press">Player 2 Count: </string>
     <string name="p3press">Player 3 Count: </string>
     <string name="p4press">Player 4 Count: </string>
+
+    <string name="clear_sure">Clearing your stats will prevent you from viewing statistic info and e-mailing them.</string>
+
 </resources>
