@@ -14,6 +14,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by Suzanne on 9/30/2015.
@@ -22,6 +23,7 @@ public class BuzzerCountList {
     private String FILENAME;
     private Context context;
     private ArrayList<String> buzzerCounts;
+    private Iterator<String> it;
 
     public BuzzerCountList(Context context, String mode) {
         FILENAME = mode;

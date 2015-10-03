@@ -3,18 +3,25 @@
     <string name="action_settings">Settings</string>
 
     <string name="title_activity_singleplayer">Single Player</string>
+
     <string name="title_activity_player_select">Choose Number of Players</string>
+
     <string name="title_activity_two_player">Two Players</string>
     <string name="title_activity_three_player">Three Players</string>
     <string name="title_activity_four_player">Four Players</string>
+
     <string name="title_activity_statistics_select">Statistics</string>
-    <string name="title_activity_reaction_time_select">Choose Amount of Reactions</string>
-    <string name="title_activity_player_press_select">Stats by Number of Players</string>
+
+    <string name="title_activity_reaction_time_select">Choose Stats to View</string>
     <string name="title_activity_minimum_reaction">Minimum of Reaction Times</string>
     <string name="title_activity_maximum_reaction">Maximum of Reaction Times</string>
     <string name="title_activity_average_reaction">Average of Reaction Times</string>
     <string name="title_activity_median_reaction">Median of Reaction Times</string>
+
+    <string name="title_activity_player_press_select">Stats by Number of Players</string>
     <string name="title_activity_two_player_press">Two Player Press Count</string>
+    <string name="title_activity_three_player_press">Three Player Press Count</string>
+    <string name="title_activity_four_player_press">Four Player Press Count</string>
 
     <string name="single">Single Player</string>
     <string name="gameshow">Gameshow Buzzer</string>
@@ -31,12 +38,13 @@
 
     <string name="reactiontimes">Reaction Times</string>
     <string name="playerpresses">Player Presses</string>
+    <string name="clear">Clear All Reaction Times</string>
+    <string name="email">E-mail Statistics</string>
 
     <string name="minimum">Minimum</string>
     <string name="maximum">Maximum</string>
     <string name="average">Average</string>
     <string name="median">Median</string>
-    <string name="clear">Clear All Reaction Times</string>
 
     <string name="minall">Minimum of All Reaction Times: </string>
     <string name="min10">Minimum of Last 10 Reaction Times: </string>
@@ -58,8 +66,4 @@
     <string name="p2press">Player 2 Count: </string>
     <string name="p3press">Player 3 Count: </string>
     <string name="p4press">Player 4 Count: </string>
-    <string name="title_activity_three_player_press">ThreePlayerPressActivity</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="title_activity_four_player_press">FourPlayerPressActivity</string>
 </resources>

@@ -50,13 +50,6 @@ public class ReactionTimeSelectActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        Button clear = (Button) findViewById(R.id.clear);
-        clear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
     }
 
     @Override
