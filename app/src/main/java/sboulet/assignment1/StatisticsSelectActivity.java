@@ -1,46 +1,36 @@
 package sboulet.assignment1;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class MenuActivity extends AppCompatActivity {
+public class StatisticsSelectActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_statistics_select);
 
-        //moves to SingleplayerActivity when pressed
-        Button single = (Button) findViewById(R.id.single);
-        single.setOnClickListener(new View.OnClickListener() {
+        //moves to ReactionTimeSelectActivity when pressed
+        Button reaction = (Button) findViewById(R.id.reaction);
+        reaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, SingleplayerActivity.class);
+                Intent intent = new Intent(StatisticsSelectActivity.this, ReactionTimeSelectActivity.class);
                 startActivity(intent);
             }
         });
 
-        //moves to GameshowActivity when pressed
-        Button gameshow = (Button) findViewById(R.id.gameshow);
-        gameshow.setOnClickListener(new View.OnClickListener() {
+        //moves to PlayerPressSelectActivity when pressed
+        Button player = (Button) findViewById(R.id.player);
+        player.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, PlayerSelectActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        //moves to StatisticsActivity when pressed
-        Button stats = (Button) findViewById(R.id.stats);
-        stats.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, StatisticsSelectActivity.class);
+                Intent intent = new Intent(StatisticsSelectActivity.this, PlayerPressSelectActivity.class);
                 startActivity(intent);
             }
         });
@@ -49,7 +39,7 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_statistics_select, menu);
         return true;
     }
 
