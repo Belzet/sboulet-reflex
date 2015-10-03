@@ -56,4 +56,24 @@ public class BuzzerCountList {
             throw new RuntimeException(e);
         }
     }
+
+    public int playerOneCount() {
+
+        return 5;
+    }
+
+    public int playerTwoCount() {
+
+        return 5;
+    }
+
+    public int playerThreeCount() {
+
+        return 5;
+    }
+
+    public int playerFourCount() {
+
+        return 5;
+    }
 }

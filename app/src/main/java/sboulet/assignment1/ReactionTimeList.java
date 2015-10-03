@@ -22,7 +22,7 @@ import java.util.Iterator;
 /**
  * Created by Suzanne on 9/30/2015.
  */
-public class ReactionTimeList implements Comparator<Long> {
+public class ReactionTimeList {
     private ArrayList<Long> reactionTimes;
     private static final String FILENAME = "reaction.sav";
     private Context context;
@@ -44,11 +44,6 @@ public class ReactionTimeList implements Comparator<Long> {
         }
     }
 
-    @Override
-    public int compare(Long lhs, Long rhs) {
-        return Long.compare(lhs, rhs);
-    }
-
     public void addTime(Long time) {
         reactionTimes.add(time);
         try {
@@ -67,7 +62,7 @@ public class ReactionTimeList implements Comparator<Long> {
 
     public int getMinAll() {
         it = reactionTimes.iterator();
-        int min = 1000000;
+        int min = reactionTimes.get((reactionTimes.size() - 1)).intValue();
         int nextInt = 0;
         while (it.hasNext()) {
             nextInt = (it.next()).intValue();
@@ -79,8 +74,20 @@ public class ReactionTimeList implements Comparator<Long> {
     }
 
     public int getMinAmount(int num) {
-        it = reactionTimes.iterator();
-        return 5;
+        int size = reactionTimes.size() - 1;
+        int min = reactionTimes.get(size).intValue();
+        for (int i = size - 1; i > (size - num); i--) {
+            try {
+                if (min > ((reactionTimes.get(i)).intValue())) {
+                    min = reactionTimes.get(i).intValue();
+                }
+            }
+            //if there aren't enough results, break and display what you have so far
+            catch (ArrayIndexOutOfBoundsException e){
+                break;
+            }
+        }
+        return min;
     }
 
     public int getMaxAll() {
@@ -97,8 +104,20 @@ public class ReactionTimeList implements Comparator<Long> {
     }
 
     public int getMaxAmount(int num) {
-        it = reactionTimes.iterator();
-        return 5;
+        int size = reactionTimes.size() - 1;
+        int max = reactionTimes.get(size).intValue();
+        for (int i = size - 1; i > (size - num); i--) {
+            try {
+                if (max < ((reactionTimes.get(i)).intValue())) {
+                    max = reactionTimes.get(i).intValue();
+                }
+            }
+            //if there aren't enough results, break and display what you have so far
+            catch (ArrayIndexOutOfBoundsException e){
+                break;
+            }
+        }
+        return max;
     }
 
     public int getAvgAll() {
@@ -113,8 +132,21 @@ public class ReactionTimeList implements Comparator<Long> {
     }
 
     public int getAvgAmount(int num) {
-        it = reactionTimes.iterator();
-        return 5;
+        int size = reactionTimes.size() - 1;
+        int avg = 0;
+        int count = 0;
+        for (int i = size; i > (size - num); i--) {
+            try {
+                avg += reactionTimes.get(i).intValue();
+                count++;
+            }
+            //if there aren't enough results, break and display what you have so far
+            catch (ArrayIndexOutOfBoundsException e){
+                break;
+            }
+        }
+        avg /= count;
+        return avg;
     }
 
     public int getMedAll() {
@@ -135,7 +167,30 @@ public class ReactionTimeList implements Comparator<Long> {
     }
 
     public int getMedAmount(int num) {
-        it = reactionTimes.iterator();
-        return 5;
+        int med = 0;
+        ArrayList<Integer> numLast = new ArrayList<Integer>();
+        int size = reactionTimes.size() - 1;
+        int count = 0;
+        for (int i = size; i > (size - num); i--) {
+            try {
+                numLast.add(reactionTimes.get(i).intValue());
+                count++;
+            }
+            //if there aren't enough results, break and display what you have so far
+            catch (ArrayIndexOutOfBoundsException e) {
+                break;
+            }
+        }
+        Collections.sort(numLast);
+        if ((numLast.size() % 2) == 0) {
+            //if size is even, get two values and average
+            int medA = numLast.get(count / 2);
+            int medB = numLast.get((count / 2) - 1);
+            med = (medA + medB) / 2;
+        }
+        else {
+            med = numLast.get((count / 2) + 1);
+        }
+        return med;
     }
 }
