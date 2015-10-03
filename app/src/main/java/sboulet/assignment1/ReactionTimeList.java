@@ -14,12 +14,15 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 
 /**
  * Created by Suzanne on 9/30/2015.
  */
-public class ReactionTimeList {
+public class ReactionTimeList implements Comparator<Long> {
     private ArrayList<Long> reactionTimes;
     private static final String FILENAME = "reaction.sav";
     private Context context;
@@ -41,6 +44,11 @@ public class ReactionTimeList {
         }
     }
 
+    @Override
+    public int compare(Long lhs, Long rhs) {
+        return Long.compare(lhs, rhs);
+    }
+
     public void addTime(Long time) {
         reactionTimes.add(time);
         try {
@@ -59,40 +67,74 @@ public class ReactionTimeList {
 
     public int getMinAll() {
         it = reactionTimes.iterator();
-        return 5;
+        int min = 1000000;
+        int nextInt = 0;
+        while (it.hasNext()) {
+            nextInt = (it.next()).intValue();
+            if (min > nextInt) {
+                min = nextInt;
+            }
+        }
+        return min;
     }
 
-    public long getMinAmount(int num) {
+    public int getMinAmount(int num) {
         it = reactionTimes.iterator();
         return 5;
     }
 
-    public long getMaxAll() {
+    public int getMaxAll() {
+      it = reactionTimes.iterator();
+        int max = 0;
+        int nextInt = 0;
+        while (it.hasNext()) {
+            nextInt = (it.next()).intValue();
+            if (max < nextInt) {
+                max = nextInt;
+            }
+        }
+        return max;
+    }
+
+    public int getMaxAmount(int num) {
         it = reactionTimes.iterator();
         return 5;
     }
 
-    public long getMaxAmount(int num) {
+    public int getAvgAll() {
+        it = reactionTimes.iterator();
+        int total = 0;
+        int nextInt = 0;
+        while (it.hasNext()) {
+            nextInt = (it.next()).intValue();
+            total += nextInt;
+        }
+        return (total / (reactionTimes.size()));
+    }
+
+    public int getAvgAmount(int num) {
         it = reactionTimes.iterator();
         return 5;
     }
 
-    public long getAvgAll() {
-        it = reactionTimes.iterator();
-        return 5;
+    public int getMedAll() {
+        int med = 0;
+        int middle = reactionTimes.size() / 2;
+        ArrayList<Long> sortedReactionTimes = reactionTimes;
+        Collections.sort(sortedReactionTimes);
+        if ((sortedReactionTimes.size() % 2) == 0) {
+            //if size is even, get two values and average
+            int medA = sortedReactionTimes.get(middle).intValue();
+            int medB = sortedReactionTimes.get(middle-1).intValue();
+            med = (medA + medB) / 2;
+        }
+        else {
+            med = sortedReactionTimes.get(middle+1).intValue();
+        }
+        return med;
     }
 
-    public long getAvgAmount(int num) {
-        it = reactionTimes.iterator();
-        return 5;
-    }
-
-    public long getMedAll() {
-        it = reactionTimes.iterator();
-        return 5;
-    }
-
-    public long getMedAmount(int num) {
+    public int getMedAmount(int num) {
         it = reactionTimes.iterator();
         return 5;
     }
