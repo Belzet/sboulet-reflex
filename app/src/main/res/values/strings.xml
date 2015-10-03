@@ -10,6 +10,11 @@
     <string name="title_activity_statistics_select">Statistics</string>
     <string name="title_activity_reaction_time_select">Choose Amount of Reactions</string>
     <string name="title_activity_player_press_select">Stats by Number of Players</string>
+    <string name="title_activity_minimum_reaction">Minimum of Reaction Times</string>
+    <string name="title_activity_maximum_reaction">Maximum of Reaction Times</string>
+    <string name="title_activity_average_reaction">Average of Reaction Times</string>
+    <string name="title_activity_median_reaction">Median of Reaction Times</string>
+    <string name="title_activity_two_player_press">Two Player Press Count</string>
 
     <string name="single">Single Player</string>
     <string name="gameshow">Gameshow Buzzer</string>
@@ -32,4 +37,29 @@
     <string name="average">Average</string>
     <string name="median">Median</string>
     <string name="clear">Clear All Reaction Times</string>
+
+    <string name="minall">Minimum of All Reaction Times: </string>
+    <string name="min10">Minimum of Last 10 Reaction Times: </string>
+    <string name="min100">Minimum of Last 100 Reaction Times: </string>
+
+    <string name="maxall">Maximum of All Reaction Times: </string>
+    <string name="max10">Maximum of Last 10 Reaction Times: </string>
+    <string name="max100">Maximum of Last 100 Reaction Times: </string>
+
+    <string name="avgall">Average of All Reaction Times: </string>
+    <string name="avg10">Average of Last 10 Reaction Times: </string>
+    <string name="avg100">Average of Last 100 Reaction Times: </string>
+
+    <string name="medall">Median of All Reaction Times: </string>
+    <string name="med10">Median of Last 10 Reaction Times: </string>
+    <string name="med100">Median of Last 100 Reaction Times: </string>
+
+    <string name="p1press">Player 1 Count: </string>
+    <string name="p2press">Player 2 Count: </string>
+    <string name="p3press">Player 3 Count: </string>
+    <string name="p4press">Player 4 Count: </string>
+    <string name="title_activity_three_player_press">ThreePlayerPressActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_four_player_press">FourPlayerPressActivity</string>
 </resources>

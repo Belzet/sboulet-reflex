@@ -48,6 +48,34 @@
             android:name=".PlayerPressSelectActivity"
             android:label="@string/title_activity_player_press_select" >
         </activity>
+        <activity
+            android:name=".MinimumReactionActivity"
+            android:label="@string/title_activity_minimum_reaction" >
+        </activity>
+        <activity
+            android:name=".MaximumReactionActivity"
+            android:label="@string/title_activity_maximum_reaction" >
+        </activity>
+        <activity
+            android:name=".AverageReactionActivity"
+            android:label="@string/title_activity_average_reaction" >
+        </activity>
+        <activity
+            android:name=".MedianReactionActivity"
+            android:label="@string/title_activity_median_reaction" >
+        </activity>
+        <activity
+            android:name=".TwoPlayerPressActivity"
+            android:label="@string/title_activity_two_player_press" >
+        </activity>
+        <activity
+            android:name=".ThreePlayerPressActivity"
+            android:label="@string/title_activity_three_player_press" >
+        </activity>
+        <activity
+            android:name=".FourPlayerPressActivity"
+            android:label="@string/title_activity_four_player_press" >
+        </activity>
     </application>
 
 </manifest>

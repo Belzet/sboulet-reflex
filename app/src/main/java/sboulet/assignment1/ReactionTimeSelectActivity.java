@@ -1,9 +1,12 @@
 package sboulet.assignment1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class ReactionTimeSelectActivity extends AppCompatActivity {
 
@@ -11,6 +14,49 @@ public class ReactionTimeSelectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reaction_time_select);
+
+        Button minimum = (Button) findViewById(R.id.minimum);
+        minimum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReactionTimeSelectActivity.this, MinimumReactionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button maximum = (Button) findViewById(R.id.maximum);
+        maximum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReactionTimeSelectActivity.this, MaximumReactionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button average = (Button) findViewById(R.id.average);
+        average.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReactionTimeSelectActivity.this, AverageReactionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button median = (Button) findViewById(R.id.median);
+        median.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReactionTimeSelectActivity.this, MedianReactionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button clear = (Button) findViewById(R.id.clear);
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
     }
 
     @Override
