@@ -25,7 +25,7 @@ public class PlayerSelectActivity extends AppCompatActivity {
             }
         });
 
-        //moves to GameshowActivity when pressed
+        //moves to ThreePlayerActivity when pressed
         Button three = (Button) findViewById(R.id.three);
         three.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +35,7 @@ public class PlayerSelectActivity extends AppCompatActivity {
             }
         });
 
-        //moves to StatisticsActivity when pressed
+        //moves to FourPlayerActivity when pressed
         Button four = (Button) findViewById(R.id.four);
         four.setOnClickListener(new View.OnClickListener() {
             @Override
