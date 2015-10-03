@@ -4,13 +4,39 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MaximumReactionActivity extends AppCompatActivity {
+
+    private ReactionTimeList reactTimes;
+
+    private TextView maxall;
+    private TextView max10;
+    private TextView max100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maximum_reaction);
+
+        //initializing the TextViews
+        maxall = (TextView) findViewById(R.id.maxall);
+        max10 = (TextView) findViewById(R.id.max10);
+        max100 = (TextView) findViewById(R.id.max100);
+
+        reactTimes = new ReactionTimeList(MaximumReactionActivity.this);
+
+        //display maximum of all reaction times
+        maxall.setText((getString(R.string.maxall) + " " + reactTimes.getMaxAll()),
+                TextView.BufferType.NORMAL);
+
+        //display maximum of last 10 reaction times
+        max10.setText((getString(R.string.max10) + " " + reactTimes.getMaxAmount(10)),
+                TextView.BufferType.NORMAL);
+
+        //display maximum of 100 reaction times
+        max100.setText((getString(R.string.max100) + " " + reactTimes.getMaxAmount(100)),
+                TextView.BufferType.NORMAL);
     }
 
     @Override

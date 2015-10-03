@@ -4,13 +4,39 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MinimumReactionActivity extends AppCompatActivity {
+
+    private ReactionTimeList reactTimes;
+
+    private TextView minall;
+    private TextView min10;
+    private TextView min100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minimum_reaction);
+
+        //initializing the TextViews
+        minall = (TextView) findViewById(R.id.minall);
+        min10 = (TextView) findViewById(R.id.min10);
+        min100 = (TextView) findViewById(R.id.min100);
+
+        reactTimes = new ReactionTimeList(MinimumReactionActivity.this);
+
+        //display minimum of all reaction times
+        minall.setText((getString(R.string.minall) + " " + reactTimes.getMinAll()),
+                TextView.BufferType.NORMAL);
+
+        //display minimum of last 10 reaction times
+        min10.setText((getString(R.string.min10) + " " + reactTimes.getMinAmount(10)),
+                TextView.BufferType.NORMAL);
+
+        //display maximum of 100 reaction times
+        min100.setText((getString(R.string.min100) + " " + reactTimes.getMinAmount(100)),
+                TextView.BufferType.NORMAL);
     }
 
     @Override

@@ -4,13 +4,39 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class AverageReactionActivity extends AppCompatActivity {
+
+    private ReactionTimeList reactTimes;
+
+    private TextView avgall;
+    private TextView avg10;
+    private TextView avg100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_average_reaction);
+
+        //initializing the TextViews
+        avgall = (TextView) findViewById(R.id.avgall);
+        avg10 = (TextView) findViewById(R.id.avg10);
+        avg100 = (TextView) findViewById(R.id.avg100);
+
+        reactTimes = new ReactionTimeList(AverageReactionActivity.this);
+
+        //display average of all reaction times
+        avgall.setText((getString(R.string.avgall) + " " + reactTimes.getAvgAll()),
+                TextView.BufferType.NORMAL);
+
+        //display average of last 10 reaction times
+        avg10.setText((getString(R.string.avg10) + " " + reactTimes.getAvgAmount(10)),
+                TextView.BufferType.NORMAL);
+
+        //display average of 100 reaction times
+        avg100.setText((getString(R.string.avg100) + " " + reactTimes.getAvgAmount(100)),
+                TextView.BufferType.NORMAL);
     }
 
     @Override
