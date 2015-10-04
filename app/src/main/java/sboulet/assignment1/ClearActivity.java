@@ -1,16 +1,42 @@
 package sboulet.assignment1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class ClearActivity extends AppCompatActivity {
+
+    private BuzzerCountList twoplayer;
+    private BuzzerCountList threeplayer;
+    private BuzzerCountList fourplayer;
+
+    private ReactionTimeList reactTimes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clear);
+
+        twoplayer = new BuzzerCountList(ClearActivity.this, "2player");
+        threeplayer = new BuzzerCountList(ClearActivity.this, "3player");
+        fourplayer = new BuzzerCountList(ClearActivity.this, "4player");
+
+        reactTimes = new ReactionTimeList(ClearActivity.this);
+
+        Button clear = (Button) findViewById(R.id.yes_clear);
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                twoplayer.clear();
+                threeplayer.clear();
+                fourplayer.clear();
+                reactTimes.clear();
+            }
+        });
     }
 
     @Override

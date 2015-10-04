@@ -193,4 +193,16 @@ public class ReactionTimeList {
         }
         return med;
     }
+
+    public void clear() {
+        try {
+            FileOutputStream fos = context.openFileOutput(FILENAME, 0);
+            fos.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        context.deleteFile(FILENAME);
+    }
 }

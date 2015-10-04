@@ -28,7 +28,7 @@ public class MinimumReactionActivity extends AppCompatActivity {
 
         //display minimum of all reaction times
         minall.setText((getString(R.string.minall) + " " + reactTimes.getMinAll()),
-                TextView.BufferType.NORMAL);
+                    TextView.BufferType.NORMAL);
 
         //display minimum of last 10 reaction times
         min10.setText((getString(R.string.min10) + " " + reactTimes.getMinAmount(10)),

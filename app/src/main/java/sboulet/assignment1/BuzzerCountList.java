@@ -60,22 +60,58 @@ public class BuzzerCountList {
     }
 
     public int playerOneCount() {
-
-        return 5;
+        it = buzzerCounts.iterator();
+        int count = 0;
+        while (it.hasNext()) {
+            if (it.next().equals("Player 1")) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public int playerTwoCount() {
-
-        return 5;
+        it = buzzerCounts.iterator();
+        int count = 0;
+        while (it.hasNext()) {
+            if (it.next().equals("Player 2")) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public int playerThreeCount() {
-
-        return 5;
+        it = buzzerCounts.iterator();
+        int count = 0;
+        while (it.hasNext()) {
+            if (it.next().equals("Player 3")) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public int playerFourCount() {
+        it = buzzerCounts.iterator();
+        int count = 0;
+        while (it.hasNext()) {
+            if (it.next().equals("Player 4")) {
+                count++;
+            }
+        }
+        return count;
+    }
 
-        return 5;
+    public void clear() {
+        try {
+            FileOutputStream fos = context.openFileOutput(FILENAME, 0);
+            fos.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        context.deleteFile(FILENAME);
     }
 }
