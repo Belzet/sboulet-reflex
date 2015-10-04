@@ -26,17 +26,25 @@ public class MedianReactionActivity extends AppCompatActivity {
 
         reactTimes = new ReactionTimeList(MedianReactionActivity.this);
 
-        //display median of all reaction times
-        medall.setText((getString(R.string.medall) + " " + reactTimes.getMedAll()),
-                TextView.BufferType.NORMAL);
+        if (reactTimes.size() == 0) {
+            PopUp nodata = new PopUp(
+                    "There are no reaction times to display. Play Singleplayer Mode and come back later.",
+                    MedianReactionActivity.this);
+            nodata.show();
+        }
+        else {
+            //display median of all reaction times
+            medall.setText((getString(R.string.medall) + " " + reactTimes.getMedAll()),
+                    TextView.BufferType.NORMAL);
 
-        //display median of last 10 reaction times
-        med10.setText((getString(R.string.med10) + " " + reactTimes.getMedAmount(10)),
-                TextView.BufferType.NORMAL);
+            //display median of last 10 reaction times
+            med10.setText((getString(R.string.med10) + " " + reactTimes.getMedAmount(10)),
+                    TextView.BufferType.NORMAL);
 
-        //display median of 100 reaction times
-        med100.setText((getString(R.string.med100) + " " + reactTimes.getMedAmount(100)),
-                TextView.BufferType.NORMAL);
+            //display median of 100 reaction times
+            med100.setText((getString(R.string.med100) + " " + reactTimes.getMedAmount(100)),
+                    TextView.BufferType.NORMAL);
+        }
     }
 
     @Override

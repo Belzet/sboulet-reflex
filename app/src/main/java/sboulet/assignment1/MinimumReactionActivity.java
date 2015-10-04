@@ -26,17 +26,25 @@ public class MinimumReactionActivity extends AppCompatActivity {
 
         reactTimes = new ReactionTimeList(MinimumReactionActivity.this);
 
-        //display minimum of all reaction times
-        minall.setText((getString(R.string.minall) + " " + reactTimes.getMinAll()),
+        if (reactTimes.size() == 0) {
+            PopUp nodata = new PopUp(
+                    "There are no reaction times to display. Play Singleplayer Mode and come back later.",
+                    MinimumReactionActivity.this);
+            nodata.show();
+        }
+        else {
+            //display minimum of all reaction times
+            minall.setText((getString(R.string.minall) + " " + reactTimes.getMinAll()),
                     TextView.BufferType.NORMAL);
 
-        //display minimum of last 10 reaction times
-        min10.setText((getString(R.string.min10) + " " + reactTimes.getMinAmount(10)),
-                TextView.BufferType.NORMAL);
+            //display minimum of last 10 reaction times
+            min10.setText((getString(R.string.min10) + " " + reactTimes.getMinAmount(10)),
+                    TextView.BufferType.NORMAL);
 
-        //display maximum of 100 reaction times
-        min100.setText((getString(R.string.min100) + " " + reactTimes.getMinAmount(100)),
-                TextView.BufferType.NORMAL);
+            //display maximum of 100 reaction times
+            min100.setText((getString(R.string.min100) + " " + reactTimes.getMinAmount(100)),
+                    TextView.BufferType.NORMAL);
+        }
     }
 
     @Override

@@ -60,10 +60,27 @@ public class ReactionTimeList {
         }
     }
 
+    public int size() {
+        return reactionTimes.size();
+    }
+
+    public void clear() {
+        try {
+            FileOutputStream fos = context.openFileOutput(FILENAME, 0);
+            fos.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        context.deleteFile(FILENAME);
+    }
+
+
     public int getMinAll() {
         it = reactionTimes.iterator();
         int min = reactionTimes.get((reactionTimes.size() - 1)).intValue();
-        int nextInt = 0;
+        int nextInt;
         while (it.hasNext()) {
             nextInt = (it.next()).intValue();
             if (min > nextInt) {
@@ -192,17 +209,5 @@ public class ReactionTimeList {
             med = numLast.get((count / 2) + 1);
         }
         return med;
-    }
-
-    public void clear() {
-        try {
-            FileOutputStream fos = context.openFileOutput(FILENAME, 0);
-            fos.close();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        context.deleteFile(FILENAME);
     }
 }

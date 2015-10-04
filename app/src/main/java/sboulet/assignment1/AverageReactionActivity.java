@@ -26,17 +26,25 @@ public class AverageReactionActivity extends AppCompatActivity {
 
         reactTimes = new ReactionTimeList(AverageReactionActivity.this);
 
-        //display average of all reaction times
-        avgall.setText((getString(R.string.avgall) + " " + reactTimes.getAvgAll()),
-                TextView.BufferType.NORMAL);
+        if (reactTimes.size() == 0) {
+            PopUp nodata = new PopUp(
+                    "There are no reaction times to display. Play Singleplayer Mode and come back later.",
+                    AverageReactionActivity.this);
+            nodata.show();
+        }
+        else {
+            //display average of all reaction times
+            avgall.setText((getString(R.string.avgall) + " " + reactTimes.getAvgAll()),
+                    TextView.BufferType.NORMAL);
 
-        //display average of last 10 reaction times
-        avg10.setText((getString(R.string.avg10) + " " + reactTimes.getAvgAmount(10)),
-                TextView.BufferType.NORMAL);
+            //display average of last 10 reaction times
+            avg10.setText((getString(R.string.avg10) + " " + reactTimes.getAvgAmount(10)),
+                    TextView.BufferType.NORMAL);
 
-        //display average of 100 reaction times
-        avg100.setText((getString(R.string.avg100) + " " + reactTimes.getAvgAmount(100)),
-                TextView.BufferType.NORMAL);
+            //display average of 100 reaction times
+            avg100.setText((getString(R.string.avg100) + " " + reactTimes.getAvgAmount(100)),
+                    TextView.BufferType.NORMAL);
+        }
     }
 
     @Override

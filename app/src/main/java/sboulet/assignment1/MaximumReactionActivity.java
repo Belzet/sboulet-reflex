@@ -26,17 +26,25 @@ public class MaximumReactionActivity extends AppCompatActivity {
 
         reactTimes = new ReactionTimeList(MaximumReactionActivity.this);
 
-        //display maximum of all reaction times
-        maxall.setText((getString(R.string.maxall) + " " + reactTimes.getMaxAll()),
-                TextView.BufferType.NORMAL);
+        if (reactTimes.size() == 0) {
+            PopUp nodata = new PopUp(
+                    "There are no reaction times to display. Play Singleplayer Mode and come back later.",
+                    MaximumReactionActivity.this);
+            nodata.show();
+        }
+        else {
+            //display maximum of all reaction times
+            maxall.setText((getString(R.string.maxall) + " " + reactTimes.getMaxAll()),
+                    TextView.BufferType.NORMAL);
 
-        //display maximum of last 10 reaction times
-        max10.setText((getString(R.string.max10) + " " + reactTimes.getMaxAmount(10)),
-                TextView.BufferType.NORMAL);
+            //display maximum of last 10 reaction times
+            max10.setText((getString(R.string.max10) + " " + reactTimes.getMaxAmount(10)),
+                    TextView.BufferType.NORMAL);
 
-        //display maximum of 100 reaction times
-        max100.setText((getString(R.string.max100) + " " + reactTimes.getMaxAmount(100)),
-                TextView.BufferType.NORMAL);
+            //display maximum of 100 reaction times
+            max100.setText((getString(R.string.max100) + " " + reactTimes.getMaxAmount(100)),
+                    TextView.BufferType.NORMAL);
+        }
     }
 
     @Override

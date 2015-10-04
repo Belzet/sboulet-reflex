@@ -41,7 +41,7 @@
 
     <string name="reactiontimes">Reaction Times</string>
     <string name="playerpresses">Player Presses</string>
-    <string name="clear">Clear All Reaction Times</string>
+    <string name="clear">Clear Reaction Times and Player Presses</string>
     <string name="email">E-mail Statistics</string>
 
     <string name="minimum">Minimum</string>
