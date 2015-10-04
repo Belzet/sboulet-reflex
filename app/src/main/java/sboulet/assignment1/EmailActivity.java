@@ -29,7 +29,7 @@ public class EmailActivity extends AppCompatActivity {
 
         email = new EmailStatistics(EmailActivity.this);
 
-        if (reactList.size() == 0) {
+        if (reactList.size() == 0 || reactList.size() == 1) {
             PopUp nodata = new PopUp(
                     "There are no reaction times saved. Play Singleplayer Mode and come back later, or email now to only get statistics about player presses.",
                     EmailActivity.this

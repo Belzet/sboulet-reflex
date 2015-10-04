@@ -40,7 +40,7 @@ public class MenuActivity extends AppCompatActivity {
         stats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, StatisticsSelectActivity.class);
+                Intent intent = new Intent(MenuActivity.this, StatViewActivity.class);
                 startActivity(intent);
             }
         });

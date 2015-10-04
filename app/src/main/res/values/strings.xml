@@ -49,6 +49,15 @@
     <string name="average">Average</string>
     <string name="median">Median</string>
 
+    <string name="min">Minimum of All / 10 / 100 Reaction Times: </string>
+    <string name="max">Maximum of All / 10 / 100 Reaction Times: </string>
+    <string name="avg">Average of All / 10 / 100 Reaction Times: </string>
+    <string name="med">Median of All / 10 / 100 Reaction Times: </string>
+
+    <string name="p2count">Two Player Mode Counts (P1 / P2): </string>
+    <string name="p3count">Three Player Mode Counts (P1 / P2 / P3): </string>
+    <string name="p4count">Four Player Mode Counts (P1 / P2 / P3 / P4): </string>
+
     <string name="minall">Minimum of All Reaction Times: </string>
     <string name="min10">Minimum of Last 10 Reaction Times: </string>
     <string name="min100">Minimum of Last 100 Reaction Times: </string>
@@ -71,5 +80,7 @@
     <string name="p4press">Player 4 Count: </string>
 
     <string name="clear_sure">Clearing your stats will prevent you from viewing statistic info and e-mailing them.</string>
+    <string name="title_activity_stat_view">StatViewActivity</string>
+
 
 </resources>

@@ -10,48 +10,55 @@ import android.widget.TextView;
 
 public class FourPlayerActivity extends AppCompatActivity {
 
+    private BuzzerCountList playerCount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_four_player);
 
+        playerCount = new BuzzerCountList(FourPlayerActivity.this, "4player");
+
         //constructing Player 1 buzzer
         Button firstplayer = (Button) findViewById(R.id.player1buzzer);
-        final PlayerButton player1 = new PlayerButton(firstplayer, "Player 1", "4player", FourPlayerActivity.this);
         firstplayer.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                player1.onClick();
+                playerCount.add("Player 1");
+                PopUp player1clicked = new PopUp("Player 1 Clicked First!", FourPlayerActivity.this);
+                player1clicked.show();
             }
         });
 
         //constructing Player 2 buzzer
         Button secondplayer = (Button) findViewById(R.id.player2buzzer);
-        final PlayerButton player2 = new PlayerButton(secondplayer, "Player 2", "4player", FourPlayerActivity.this);
         secondplayer.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                player2.onClick();
+                playerCount.add("Player 2");
+                PopUp player2clicked = new PopUp("Player 2 Clicked First!", FourPlayerActivity.this);
+                player2clicked.show();
             }
         });
 
         //constructing Player 3 buzzer
         Button thirdplayer = (Button) findViewById(R.id.player3buzzer);
-        final PlayerButton player3 = new PlayerButton(secondplayer, "Player 3", "4player", FourPlayerActivity.this);
         thirdplayer.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                player3.onClick();
+                playerCount.add("Player 3");
+                PopUp player3clicked = new PopUp("Player 3 Clicked First!", FourPlayerActivity.this);
+                player3clicked.show();
             }
         });
-
-        //constructing Player 4 buzzer
+        //constructing Player 3 buzzer
         Button fourthplayer = (Button) findViewById(R.id.player4buzzer);
-        final PlayerButton player4 = new PlayerButton(secondplayer, "Player 4", "4player", FourPlayerActivity.this);
         fourthplayer.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                player4.onClick();
+                playerCount.add("Player 4");
+                PopUp player4clicked = new PopUp("Player 4 Clicked First!", FourPlayerActivity.this);
+                player4clicked.show();
             }
         });
     }

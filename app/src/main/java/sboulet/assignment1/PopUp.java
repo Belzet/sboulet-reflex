@@ -10,10 +10,10 @@ import android.content.Intent;
  */
 
 /*************************************************************************
- * This code is provided under Attribution ShareAlike 3.0 (CC BY-SA 3.0)
- * Full license here : http://creativecommons.org/licenses/by-sa/3.0/
- * (C) 2012 Mahesh on StackOverflow.com
- * http://stackoverflow.com/posts/13511580/revisions
+ * This code is provided under Attribution ShareAlike 3.0 (CC BY-SA 3.0) *
+ * Full license here : http://creativecommons.org/licenses/by-sa/3.0/    *
+ * (C) 2012 Mahesh on StackOverflow.com                                  *
+ * http://stackoverflow.com/posts/13511580/revisions                     *
  *************************************************************************/
 
 public class PopUp {

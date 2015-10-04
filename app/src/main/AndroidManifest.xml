@@ -37,52 +37,16 @@
             android:label="@string/title_activity_four_player" >
         </activity>
         <activity
-            android:name=".StatisticsSelectActivity"
-            android:label="@string/title_activity_statistics_select" >
-        </activity>
-        <activity
-            android:name=".ReactionTimeSelectActivity"
-            android:label="@string/title_activity_reaction_time_select" >
-        </activity>
-        <activity
-            android:name=".PlayerPressSelectActivity"
-            android:label="@string/title_activity_player_press_select" >
-        </activity>
-        <activity
-            android:name=".MinimumReactionActivity"
-            android:label="@string/title_activity_minimum_reaction" >
-        </activity>
-        <activity
-            android:name=".MaximumReactionActivity"
-            android:label="@string/title_activity_maximum_reaction" >
-        </activity>
-        <activity
-            android:name=".AverageReactionActivity"
-            android:label="@string/title_activity_average_reaction" >
-        </activity>
-        <activity
-            android:name=".MedianReactionActivity"
-            android:label="@string/title_activity_median_reaction" >
-        </activity>
-        <activity
-            android:name=".TwoPlayerPressActivity"
-            android:label="@string/title_activity_two_player_press" >
-        </activity>
-        <activity
-            android:name=".ThreePlayerPressActivity"
-            android:label="@string/title_activity_three_player_press" >
-        </activity>
-        <activity
-            android:name=".FourPlayerPressActivity"
-            android:label="@string/title_activity_four_player_press" >
-        </activity>
-        <activity
             android:name=".ClearActivity"
             android:label="@string/title_activity_clear" >
         </activity>
         <activity
             android:name=".EmailActivity"
             android:label="@string/title_activity_email" >
+        </activity>
+        <activity
+            android:name=".StatViewActivity"
+            android:label="@string/title_activity_stat_view" >
         </activity>
     </application>
 

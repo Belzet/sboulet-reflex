@@ -9,28 +9,34 @@ import android.widget.Button;
 
 public class TwoPlayerActivity extends AppCompatActivity {
 
+    private BuzzerCountList playerCount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_player);
 
+        playerCount = new BuzzerCountList(TwoPlayerActivity.this, "2player");
+
         //constructing Player 1 buzzer
         Button firstplayer = (Button) findViewById(R.id.player1buzzer);
-        final PlayerButton player1 = new PlayerButton(firstplayer, "Player 1", "2player", TwoPlayerActivity.this);
         firstplayer.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                player1.onClick();
+               playerCount.add("Player 1");
+                PopUp player1clicked = new PopUp("Player 1 Clicked First!", TwoPlayerActivity.this);
+                player1clicked.show();
             }
         });
 
         //constructing Player 2 buzzer
         Button secondplayer = (Button) findViewById(R.id.player2buzzer);
-        final PlayerButton player2 = new PlayerButton(secondplayer, "Player 2", "2player", TwoPlayerActivity.this);
         secondplayer.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                player2.onClick();
+                playerCount.add("Player 2");
+                PopUp player2clicked = new PopUp("Player 2 Clicked First!", TwoPlayerActivity.this);
+                player2clicked.show();
             }
         });
     }
