@@ -35,6 +35,8 @@ public class ClearActivity extends AppCompatActivity {
                 threeplayer.clear();
                 fourplayer.clear();
                 reactTimes.clear();
+                PopUp cleared = new PopUp("Cleared reaction times!", ClearActivity.this);
+                cleared.show();
             }
         });
     }

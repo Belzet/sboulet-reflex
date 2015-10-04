@@ -20,17 +20,17 @@ import java.util.Iterator;
  * Created by Suzanne on 9/30/2015.
  */
 public class BuzzerCountList {
-    private String FILENAME;
+    private String filename;
     private Context context;
     private ArrayList<String> buzzerCounts;
     private Iterator<String> it;
 
     public BuzzerCountList(Context context, String mode) {
-        FILENAME = mode;
+        filename = mode;
         this.context = context;
         buzzerCounts = new ArrayList<String>();
         try {
-            FileInputStream fis = context.openFileInput(FILENAME);
+            FileInputStream fis = context.openFileInput(filename);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
             Gson gson = new Gson();
             // Taken from https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html 2015-10-2
@@ -46,7 +46,7 @@ public class BuzzerCountList {
     public void add(String player) {
         buzzerCounts.add(player);
         try {
-            FileOutputStream fos = context.openFileOutput(FILENAME, 0);
+            FileOutputStream fos = context.openFileOutput(filename, 0);
             OutputStreamWriter writer = new OutputStreamWriter(fos);
             Gson gson = new Gson();
             gson.toJson(buzzerCounts, writer);
@@ -57,6 +57,23 @@ public class BuzzerCountList {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+
+    public String getMode() {
+        return filename;
+    }
+
+    public void clear() {
+        try {
+            FileOutputStream fos = context.openFileOutput(filename, 0);
+            fos.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        context.deleteFile(filename);
     }
 
     public int playerOneCount() {
@@ -101,17 +118,5 @@ public class BuzzerCountList {
             }
         }
         return count;
-    }
-
-    public void clear() {
-        try {
-            FileOutputStream fos = context.openFileOutput(FILENAME, 0);
-            fos.close();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        context.deleteFile(FILENAME);
     }
 }
