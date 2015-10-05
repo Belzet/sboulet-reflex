@@ -1,14 +1,17 @@
 package sboulet.assignment1;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.widget.Toast;
 
-/**
- * Created by Suzanne on 10/3/2015.
- */
+
+/************************************************************************************************
+ * This code is provided under Attribution ShareAlike 3.0 (CC BY-SA 3.0)                        *
+ * Full license here : http://creativecommons.org/licenses/by-sa/3.0/                           *
+ * (C) 2014 Jeremy Logan on StackOverflow.com, with contribution by Ahmad                       *
+ * http://stackoverflow.com/questions/2197741/how-can-i-send-emails-from-my-android-application *                    *
+ ************************************************************************************************/
+
 public class EmailStatistics {
     private String to;
     private Context context;
@@ -19,6 +22,7 @@ public class EmailStatistics {
     public EmailStatistics (Context context) {
         this.context = context;
         email = new Intent(Intent.ACTION_SEND);
+        //use email standard
         email.setType("message/rfc822");
     }
 
